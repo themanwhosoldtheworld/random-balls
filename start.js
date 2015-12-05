@@ -10,13 +10,14 @@ for(var i=0;i<10;i++){
 	var cy = Math.floor((Math.random() * 90) + 10);
 	var dx = Math.floor((Math.random() * 5));
 	var dy = Math.floor((Math.random() * 5));
-	circles.push(new Circle(cx,cy,10,dx,dy));
+	circles.push(new Circle(i,cx,cy,10,dx,dy));
 }
 //var c1 = new Circle(20,20,10,delta,delta);
 //var c2 = new Circle(100,100,10,-delta,-delta);
 function draw(){
 ctx.fillRect(0,0,width,height);
 for(var i in circles){
+	BadStrategy(circles);
 	circles[i].draw(ctx);
 }
 }

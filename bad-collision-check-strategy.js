@@ -1,5 +1,10 @@
-function BadStrategy(c, circles){
-for(var i in circles){
+function BadStrategy(circles){
+for(var j=0;j<circles.length;j++){
+	var c = circles[j];
+for(var i=j+1;i<circles.length;i++){
+	if(c.id == circles[i].id){
+	continue;
+	}
 	var cx = circles[i].x;
 	var cy = circles[i].y;
 	var xDiff = Math.abs(cx - c.x);
@@ -12,5 +17,6 @@ for(var i in circles){
 		c.deltaX = (-1)*c.deltaX;
 		c.deltaY = (-1)*c.deltaY;
 	}
+}
 }
 }
