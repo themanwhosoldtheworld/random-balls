@@ -15,7 +15,7 @@ for(var i=0;i<10;i++){
 //var c1 = new Circle(20,20,10,delta,delta);
 //var c2 = new Circle(100,100,10,-delta,-delta);
 function draw(){
-ctx.clearRect(0,0,500,500);
+ctx.fillRect(0,0,width,height);
 for(var i in circles){
 	circles[i].draw(ctx);
 }
