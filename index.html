@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+</body>
+</html>
+<script>
+var delta = 1;
+
+function Circle(x,y,rad,delta){
+
+this.x = x;
+this.y = y;
+this.rad = rad;
+this.delta = delta;
+this.draw = function(ctx){
+//ctx.scale(1.02,1.02);
+ctx.beginPath();
+ctx.arc(this.x , this.y ,this.rad,0,2*Math.PI);
+ctx.stroke();
+
+this.x= this.x + this.delta;
+this.y= this.y + this.delta;
+}
+}
+var c1 = new Circle(10,10,10,delta);
+var c2 = new Circle(50,50,10,delta);
+function draw(){
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.clearRect(0,0,500,500);
+//ctx.fillStyle = "#FF0000";
+//ctx.fillRect(0,0,150,75);
+c1.draw(ctx);
+c2.draw(ctx);
+}
+animate();
+function animate(){
+draw();
+delta= delta + .5;
+window.requestAnimationFrame(animate);
+}
+</script>
