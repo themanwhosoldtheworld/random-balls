@@ -17,7 +17,7 @@ for(var i=0;i<10;i++){
 function draw(){
 ctx.fillRect(0,0,width,height);
 for(var i in circles){
-	BadStrategy(circles);
+	CollisionStrategy(circles);
 	circles[i].draw(ctx);
 }
 }
