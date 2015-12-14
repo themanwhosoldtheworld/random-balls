@@ -16,8 +16,6 @@ ctx.arc(0 , 0 ,this.rad,0,2*Math.PI);
 ctx.fillStyle = 'white';
 ctx.fill();
 ctx.stroke();
-
-
 var xBorder = ((this.x+this.rad) >= (width + gap)) || ((this.x-this.rad) <= gap);
 var yBorder = ((this.y+this.rad) >= (height + gap)) || ((this.y-this.rad) <= gap);
 if(xBorder && yBorder){

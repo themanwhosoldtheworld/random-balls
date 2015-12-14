@@ -15,12 +15,19 @@ for(var i=j+1;i<circles.length;i++){
 		var cDeltaX = circles[i].deltaX;
 		var cDeltaY = circles[i].deltaY;
 		//headon collision
-		if((cDeltaX/cDeltaY) == (c.deltaX/c.deltaY)){
-		circles[i].deltaX = (-1)*circles[i].deltaX;
-		circles[i].deltaY = (-1)*circles[i].deltaY;
-		c.deltaX = (-1)*c.deltaX;
-		c.deltaY = (-1)*c.deltaY;
-		}
+		//if((cDeltaX/cDeltaY) == (c.deltaX/c.deltaY)){
+		//circles[i].deltaX = (-1)*circles[i].deltaX;
+		//circles[i].deltaY = (-1)*circles[i].deltaY;
+		//c.deltaX = (-1)*c.deltaX;
+		//c.deltaY = (-1)*c.deltaY;
+		//}
+		var tx = c.deltaX;
+		c.deltaX = circles[i].deltaX;
+		circles[i].deltaX = tx;
+		
+		var ty = c.deltaY;
+		c.deltaY = circles[i].deltaY;
+		circles[i].deltaY = ty;
 	}
 }
 }
